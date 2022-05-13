@@ -1,0 +1,92 @@
+#menu-options-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    border-bottom: 1px solid $darkgray-color;
+
+    li {
+        list-style-type: none;
+        padding-bottom: 10px;
+
+        a {
+            p {
+                text-transform: capitalize;
+                line-height: 32px;
+                height: 32px;
+                padding: 0 12px;
+                color: $lightgray-color;
+                position: relative;
+                transition: all .15s ease-in-out;
+    
+                span {
+                    background-color: $darkgray-color;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    z-index: -1;
+                    border-radius: 4px;
+                    visibility: hidden;
+                }
+            }
+            &:hover {
+                p {
+                    color: $white-color;
+                }
+            }
+        }
+
+        &.active {
+            border-bottom: 2px solid $white-color;
+            a {
+                p {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes fadein {
+    from {
+        visibility: hidden;
+    }
+  
+    to {
+        visibility: visible;
+    }
+}
+@keyframes fadeout {
+    from {
+        visibility: visible;
+    }
+  
+    to {
+        visibility: hidden;
+    }
+}
+@keyframes slideinleft {
+    from {
+        visibility: hidden;
+        transform: translateX(-50%);
+    }
+  
+    to {
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
+@keyframes slideinright {
+    from {
+        visibility: hidden;
+        transform: translateX(50%);
+    }
+  
+    to {
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
